@@ -1,0 +1,4 @@
+LCD driver is at
+"drivers/lcd/embedsky_lcd.c"
+main file is at
+"comman/main.c"
