@@ -1884,9 +1884,6 @@ smdk2410_config	:	unconfig
 EmbedSky_config	:	unconfig
 	@$(MKCONFIG) $(@:_config=) arm arm920t EmbedSky NULL s3c24x0
 
-tq2440_config	:	unconfig
-	@$(MKCONFIG) $(@:_config=) arm arm920t EmbedSky NULL s3c24x0
-
 SX1_config :		unconfig
 	@$(MKCONFIG) $(@:_config=) arm arm925t sx1
 
@@ -2298,7 +2295,11 @@ clobber:	clean
 	rm -f $(obj)u-boot $(obj)u-boot.map $(obj)u-boot.hex $(ALL)
 	rm -f $(obj)tools/crc32.c $(obj)tools/environment.c $(obj)tools/env/crc32.c
 	rm -f $(obj)tools/inca-swap-bytes $(obj)cpu/mpc824x/bedbug_603e.c
+<<<<<<< HEAD
 	rm -rf $(obj)include/asm/proc $(obj)include/asm/arch $(obj)include/asm
+=======
+	rm -f $(obj)include/asm/proc $(obj)include/asm/arch $(obj)include/asm
+>>>>>>> dev
 	[ ! -d $(OBJTREE)/nand_spl ] || find $(obj)nand_spl -lname "*" -print | xargs rm -f
 
 ifeq ($(OBJTREE),$(SRCTREE))
