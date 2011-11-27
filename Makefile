@@ -1884,9 +1884,6 @@ smdk2410_config	:	unconfig
 EmbedSky_config	:	unconfig
 	@$(MKCONFIG) $(@:_config=) arm arm920t EmbedSky NULL s3c24x0
 
-tq2440_config	:	unconfig
-	@$(MKCONFIG) $(@:_config=) arm arm920t EmbedSky NULL s3c24x0
-
 SX1_config :		unconfig
 	@$(MKCONFIG) $(@:_config=) arm arm925t sx1
 
