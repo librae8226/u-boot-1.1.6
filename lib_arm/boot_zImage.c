@@ -105,7 +105,7 @@ __asm__(
  */
 static void setup_linux_param(ulong param_base)
 {
-	struct param_struct *params = (struct param_struct *)param_base; 
+	struct param_struct *params = (struct param_struct *)param_base;
 	char *linux_cmd;
 
 //	printk("Setup linux parameters at 0x%08lx\n", param_base);
@@ -136,12 +136,12 @@ static inline int copy_kernel_img(ulong dst, const char *src, size_t size)
 	int ret = 0;
 if (NF_ReadID() == 0x76)
 {
-	ret = nand_read_ll_lcd((unsigned char *)dst, 
+	ret = nand_read_ll_lcd((unsigned char *)dst,
 			   (unsigned long)src, (int)size);
 }
 else
 {
-	ret = nand_read_ll_lp_lcd((unsigned char *)dst, 
+	ret = nand_read_ll_lp_lcd((unsigned char *)dst,
 			   (unsigned long)src, (int)size);
 }
 	return ret;
@@ -185,10 +185,10 @@ int boot_zImage(ulong from, size_t size)
 //	printk("MACH_TYPE = %d\n", mach_type);
 
 	/* Go Go Go */
-	printk("NOW, Booting Linux......\n");	
+	printk("NOW, Booting Linux......\n");
 	call_linux(0, mach_type, to);
 
-	return 0;	
+	return 0;
 }
 
 int do_boot_zImage (cmd_tbl_t *cmdtp, int flag, int argc, char *argv[])
@@ -230,10 +230,10 @@ int test_zImage(void)
 //	printk("MACH_TYPE = %d\n", mach_type);
 
 	/* Go Go Go */
-	printk("NOW, Booting Linux......\n");	
+	printk("NOW, Booting Linux......\n");
 	call_linux(0, mach_type, to);
 
-	return 0;	
+	return 0;
 }
 
 int do_test_zImage (cmd_tbl_t *cmdtp, int flag, int argc, char *argv[])
@@ -269,10 +269,10 @@ int boot_noos(ulong from, size_t size)
 	}
 
 	/* Go Go Go */
-	printk("NOW, Booting code......\n");	
+	printk("NOW, Booting code......\n");
 	run_command("go 0x30000000", 0);
 
-	return 0;	
+	return 0;
 }
 
 int do_boot_noos (cmd_tbl_t *cmdtp, int flag, int argc, char *argv[])
